@@ -81,9 +81,37 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
   - href：用于在当前文档和引用资源之间确立联系，当浏览器遇到href会并行下载资源并且不会停止对当前文档的处理。
   - src：用于替换当前内容，当浏览器解析到src，会暂停其他资源的下载和处理，知道该资源加载或执行完毕。
 - 容器固宽 一行元素的时候居中 多行的时候左对齐？
+```html
+<style>
+    .content {
+      width: 200px;
+      border: 1px solid red;
+      text-align: center;
+    }
+
+    .content p {
+      /* 将p设置为行内块，这样p的宽度就是由内容撑开
+        当一行时，p的宽度小于content的宽度，所以content的text-align: center可以让p整体居中
+        当多行时，p的宽度等于content的宽度，所以text-align：left可以让p的文本左对齐
+      */
+      display: inline-block;
+      text-align: left;
+    }
+  </style>
+  <body>
+    <div class="content">
+      <p>内容只有一行居中</p>
+    </div>
+    <br />
+    <div class="content">
+      <p>内容多行左对齐，内容多行左对齐</p>
+    </div>
+```
 - z-index 在什么情况下会失效？
+  - z-index属性作用在被定位的元素上，如果在一个没有设置定位的元素上使用z-index是不会有效果的。
+  - 元素的z-index效果是会受到父元素的z-index的影响，如果父元素的z-index很小，那么子元素的z-index取很大爷不起作用。
 - position: sticky 的作用？
-- 如何看待 CSS 预处理器？
+  - 粘性定位可以被认为是相对定位和固定定位的混合。元素在跨越特定阈值前为相对定位，之后为固定定位。
 - 有一个类似表格（或者日历）的布局，每个单元格的border为1px，相邻单元格中间的border也为1px，怎么实现？现在要实现选择某一单元格会高亮，怎么实现？
 - html中link一个很大的css文件，导致加载很慢。那用户看到的浏览器加载过程是怎样的，是一直空白么？还是先出现个骨架？还是什么？如果中间有js语句，会怎么样？页面加载会终止么？
 - HTML：meta标签干什么的，都有什么属性；doctype是干嘛的，都有哪些属性？
