@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [HTML，CSS](#htmlcss)
+- [JavaScript](#javascript)
+- [Vue](#vue)
+- [Node](#node)
+- [网络和安全方面](#%E7%BD%91%E7%BB%9C%E5%92%8C%E5%AE%89%E5%85%A8%E6%96%B9%E9%9D%A2)
+- [浏览器以及操作系统相关](#%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BB%A5%E5%8F%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3)
+- [Webpack以及优化](#webpack%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%8C%96)
+- [数据结构](#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
+- [算法和手写题](#%E7%AE%97%E6%B3%95%E5%92%8C%E6%89%8B%E5%86%99%E9%A2%98)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## HTML，CSS
 - 盒模型有哪些？有哪些使用场景？
   - 标准盒模型（content-box）：设置的width和height就是内容的宽度和高度
@@ -59,8 +75,11 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
 
 ```
 - 文档流有了解吗？
-  - 
+  - 文档流也称常规流
+  - 脱离文档流（float，绝对定位，固定定位）
 - css的href属性和script的src属性的区别？
+  - href：用于在当前文档和引用资源之间确立联系，当浏览器遇到href会并行下载资源并且不会停止对当前文档的处理。
+  - src：用于替换当前内容，当浏览器解析到src，会暂停其他资源的下载和处理，知道该资源加载或执行完毕。
 - 容器固宽 一行元素的时候居中 多行的时候左对齐？
 - z-index 在什么情况下会失效？
 - position: sticky 的作用？
