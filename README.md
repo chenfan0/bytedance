@@ -140,12 +140,88 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
   <meta name='viewport' content="width=device-width, initial-scale=1.0">
   ```
 - doctype是干嘛的，都有哪些属性？
+  - 告知浏览器采取什么样的文档类型进行解析
+  - <!DOCTYPE html5>
 - HTML：语义化标签说出几个?
+  - h1-h6
+  - header
+  - footer
+  - menu
+  - aside
+  - article
+  - main
+  - nav
 - form表单的属性说一说？
+  - name：表单名称
+  - action：表单提交的url
+  - enctype：当method为post，将表单内容提交给服务器的类型（multipart/form-data，application/x-www-form-urlencoded，text/plain）
+  - method：使用哪种请求方式（get/post）
+  - target：表单提交后，在哪里显示响应信息。（_self, _blank, _parent, _top）
 - 怎么实现抽屉侧边栏？
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #mark {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #808080;
+        opacity: 0.5;
+      }
+
+      #drawer {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        bottom: 0;
+        right: 0;
+        transition: all .5s;
+        background-color: red;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mark"></div>
+    <div id="drawer">drawer</div>
+    <button id="btn">点击</button>
+
+    <script>
+      const mark = document.querySelector("#mark");
+      const drawer = document.querySelector("#drawer");
+      const btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", function (e) {
+        mark.style.display = "block";
+        drawer.style.left = '80%'
+      });
+
+      mark.addEventListener("click", function (e) {
+        mark.style.display = "none";
+        drawer.style.left = '100%'
+      });
+    </script>
+  </body>
+</html>
+
+```
 - head 有啥标签，各有啥用？
+  -meta标签
+  -title标签：显示title
+  -link标签可以加载css文件
 - 设置一个元素margin-top: -20%，具体是什么效果？
+  -margin去值为%时，百分比是相对于包含块的宽度。（padding也是一样）
 - 元素line-height设置为1，具体是多少像素，怎么计算？
+  - line-height设置为1时，取值就相当于1*font-size
 - 如何计算1rem具体等于多少像素？
 - 图片渲染下方有一条白线是什么原因造成的？
 - css实现一个梯形？
