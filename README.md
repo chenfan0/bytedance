@@ -1,9 +1,65 @@
 ## HTML，CSS
 - 盒模型有哪些？有哪些使用场景？
+  - 标准盒模型（content-box）：设置的width和height就是内容的宽度和高度
+  - IE盒模型（border-box）：设置的width是content+padding+border的总宽度，设置的height也是content+padding+border的总和。
 - 实现一个等腰三角形
+```html
+<style>
+  #box {
+    border-width: 100px;
+    border-color: transparent transparent transparent red;
+    border-style: solid;
+  }
+</style>
+<div id='box'></div>
+```
 - BFC是什么？有什么用？
+  - BFC(块级格式上下文)可以**包含内部浮动（可以让内部浮动元素撑起父元素的高度），排除外部浮动（正常文档流中建立的 BFC 不得与元素本身所在的块格式化上下文中的任何浮动的外边距重叠。），阻止外边距重叠。**
+  - 创建BFC：
+    - 根元素（html）
+    - display: flow-root(可以创建一个无副作用的BFC)
+    - float不为none
+    - 绝对定位或者固定定位
+    - 行内块元素display：inline-block 
+    - overflow不为visible
+    - flex布局
 - 列出 flex 常用属性和值，并解释。
+```css
+/* flex container 的属性 */
+/* 设置主轴方向 */
+flex-direction: row; /*默认值，沿着x轴 从左到右*/
+                row-reverse  /* 沿着x轴 从右到左 */
+                column  /* 沿着y轴，从上到下 */
+                column-reverse /* 沿着y轴，从下到下 */ 
+/* flex container 的属性 */
+/* justify-content 决定了flex items 在主轴（main axis）上的对其方式 */
+justify-content: flex-start; /* 默认值 与main start 对齐 */
+                 flex-end /* 与main-end对齐 */
+                 center /* 居中对齐 */
+                 space-between  /* flex items 之间距离相等，与main start，main end两端对齐 */
+                 space-around /* flex items 之间距离相等，与main start，main end之间的距离是flex items 之间距离的一半 */
+                 space-evently /* flex items 之间距离相等，与main start，main end之间的距离等于flex items 之间的距离 */
+/* flex container 的属性 */
+/* align-items 决定了flex items 在交叉轴（cross axis）上的对齐方式 */
+align-items: normal; /* 在弹性布局中flex items cross axis方向的size为auto ，效果和stretch一样 */
+             stretch /* flex items 在cross axis方向的size为auto时，会自动拉伸至填充flex container */
+             flex-start /* 与cross start对齐 */
+             flex-end /* 与cross end对齐 */
+             center /* 居中对齐 */
+             baseline /* 与基线对齐 */
+/* flex-wrap 改变换行方式 默认情况下 所有的flex items都会才一行显示 */
+flex-wrap: nowrap; /* 默认值，不换行 */
+           wrap  /* 换行 */
+           wrap-reverse /* 换行且在cross axis 翻转 */
+flex-flow /* 是flex-direction 和 flex-wrap的简写（可以只写一个） 可以省略，顺序任意 */
+/* flex items 的属性 */
+order  /* 决定了flex items的排布顺序  可以设置任意整数，值越小越排在前面， 默认值是0*/
+/* flex items 的属性 */
+align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆盖父元素的align-items */
+
+```
 - 文档流有了解吗？
+  - 
 - css的href属性和script的src属性的区别？
 - 容器固宽 一行元素的时候居中 多行的时候左对齐？
 - z-index 在什么情况下会失效？
