@@ -141,7 +141,7 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
   ```
 - doctype是干嘛的，都有哪些属性？
   - 告知浏览器采取什么样的文档类型进行解析
-  - <!DOCTYPE html5>
+  - <\!DOCTYPE html5>
 - HTML：语义化标签说出几个?
   - h1-h6
   - header
@@ -215,30 +215,63 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
 
 ```
 - head 有啥标签，各有啥用？
-  -meta标签
-  -title标签：显示title
+  - meta标签
+  - title标签：显示title
   -link标签可以加载css文件
 - 设置一个元素margin-top: -20%，具体是什么效果？
-  -margin去值为%时，百分比是相对于包含块的宽度。（padding也是一样）
+  - margin取值为%时，百分比是相对于包含块的宽度。（padding也是一样）
 - 元素line-height设置为1，具体是多少像素，怎么计算？
   - line-height设置为1时，取值就相当于1*font-size
 - 如何计算1rem具体等于多少像素？
+  - 1rem就等于html标签设定的font-size
 - 图片渲染下方有一条白线是什么原因造成的？
+  - 因为图片默认是基线对齐，可以设置`vertical-align:middle`设置居中对齐。
+  - 可以将图片转换为块级元素去除掉空白
+  - 对图片进行设置浮动
 - css实现一个梯形？
+   ```html
+   <style>
+    #box {
+      /* 这样设置是三角形 */
+      /* width: 0;
+      height: 0; */
+
+      width: 20px;
+      height: 20px;
+      border: 50px solid red;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+    </style>
+    <div id='box'></div>
+   ```
 - CSS动画 GPU加速开启（3d属性）与原理（GPU）？
+   - transform和opacity两个属性可以开启优化合成。
 - 伪类与伪元素差别？
+  - 伪类是选择器的一种，它用于选择处于特定状态的元素
+  - 伪元素可以创建一个元素，不过该元素不会出现在dom树上。
 - Flex: 0 1 auto是代表什么？
+  - flex-grow：0代表就算flex-container还有剩余空间flex-item也不会扩大
+  - flex-shrink：1代表当flex-container的空间不满足flex-item设置的宽度时，flex-item会进行缩小
+  - flex-basis：auto指定flex-item在主轴方向上的初始大小。
 - 了解iframe吗？
+  - \<iframe\>可以将另一个页面嵌入到当前页面中。
 - script标签属性defer和async的作用，什么区别？
+  - defer：并行加载js文件，等到解析完html后再执行js文件
+  - async：并行加载js文件，当该文件加载完成后就执行js文件
 - 类选择器和伪类的区别及优先级？
+  - 类选择器和伪类选择器的优先级是一样的
 - 用css实现一个模态窗口，要从窗口下面向上弹的动画？
-- 讲一讲flex布局？给子元素设置flex:1是什么含义？flex是哪几个属性的简写？flex-shrink默认值是几？剩余空间的分配规则是怎样的？
 - CSS单位 px rem em vw vh？如果窗口尺寸调整，vw，vh会产生变化吗？
 - BFC会与float元素相互覆盖吗？
+  - 不会
 - css选择器优先级排序？
-- CSS实现一个秒针效果（一分钟转一圈，匀速和一秒一走）？
-- CSS实现类似微信朋友圈的效果，要求根据图片数量显示不同的布局。（一张时占比50%，四张是田字布局，九张时九宫格布局）？
+  - id选择器 > class选择器 > 标签选择器 > 通配符选择器
+  - 内联样式 > id选择器
+  - !important优先级最高
 - box-sizing的意义是什么？
+  - 设置盒子的模型（border-box，content-box）
 ## JavaScript
 - 遍历object的value方法？
 - js如何实现继承？
