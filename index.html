@@ -1,47 +1,33 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>css阻塞</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      h1 {
-        color: red !important
-      }
-    </style>
-    <script>
-      function h () {
-        console.log(document.querySelectorAll('h1').length)
-      }
-      setTimeout(h, 0)
-    </script>
-    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>这是红色的</h1>
-  </body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>css阻塞</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      console.log("before css");
-      var startDate = new Date();
-    </script>
-    <link
-      href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <h1>这是红色的</h1>
-    <script>
-      var endDate = new Date();
-      console.log("after css");
-      console.log("经过了" + (endDate - startDate) + "ms");
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 50vw;
+      height: 10vh;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <script>
+    const p1 = new Promise((resolve, reject) => {
+      resolve(a)
+    })
+    async function foo() {
+      try {
+        await p1
+      } catch (err) {
+        console.log(err);
+      }
+      console.log(1);
+    }
+    foo()
+  </script>
+</body>
 </html>
