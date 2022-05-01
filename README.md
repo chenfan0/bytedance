@@ -119,8 +119,29 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
   - js会阻塞DOM解析。
   - 如果页面同时存在css和js，并且存在js文件在css后面，则DOMContentLoaded事件会在css加载完毕后才执行。
   - 其他情况DOMContentLoaded事件都不会等待css加载。
-- HTML：meta标签干什么的，都有什么属性；doctype是干嘛的，都有哪些属性？
-- HTML：语义化标签说出几个；form表单的属性说一说？
+- HTML：meta标签干什么的，都有什么属性？
+  - <meta>元素表示哪些不能由其他html元相关元素之一表示的任何元数据信息。
+  ```html
+  <!-- 描述HTML文档的编码类型 -->
+  <meta charset='UTF-8' />
+
+  <!-- 如果设置了http-equiv属性，则meta元素是编译指令，提供的信息类似于命名的HTTP头部 -->
+  <meta http-equiv="refresh" content='2;url=http://www.baidu.com' />
+
+  <!-- name属性和content属性 -->
+
+  <!-- description用来告诉搜索引擎当前网页的主要内容，是关于网站的一段描述信息 -->
+  <meta name="description" content="this is my HTML" />
+  <!-- keywords设置网页的关键字，告诉浏览器关键字是什么 -->
+  <meta name="keywords" content="nba">
+  <!-- robots告诉搜索机器人哪些页面需要索引哪些不需要 -->
+  <meta name="robots" content="all" />
+  <!-- 设置浏览器视图 -->
+  <meta name='viewport' content="width=device-width, initial-scale=1.0">
+  ```
+- doctype是干嘛的，都有哪些属性？
+- HTML：语义化标签说出几个?
+- form表单的属性说一说？
 - 怎么实现抽屉侧边栏？
 - head 有啥标签，各有啥用？
 - 设置一个元素margin-top: -20%，具体是什么效果？
@@ -194,7 +215,7 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
 - 你对于封装、模块化的理解，项目中自己封装过组件吗？
 - vue中的scoped style是如何实现作用域样式以及为什么vue不使用css module来实现作用域？
 - watch和computed的区别？
-- MVC MVVC MVP的异同？
+- MVC MVVM MVP的异同？
 - 使用框架一定比原生的或者jQuery好吗？为什么？
 - vue框架有什么特点？
 - vuex的mutation和action的区别，为什么要设立两个而不是直接都用mutation操作state？
@@ -278,7 +299,7 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
 - loader与plugin plugin遵循的事件流机制？
 - webpack打包过程？
 - 怎样从零搭建项目？
-- packjson文件里有一些key，value。其中一个key叫dependencies和devDependencies，能说说作用吗？
+- package.json文件里有一些key，value。其中一个key叫dependencies和devDependencies，能说说作用吗？
 - externals是怎么实现的？
 - CDN优化时，你是如何判断该将哪些包分离。？
 - loader与plugin的区别？
