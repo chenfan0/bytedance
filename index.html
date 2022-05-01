@@ -7,27 +7,25 @@
   <title>Document</title>
   <style>
     #box {
-      width: 50vw;
-      height: 10vh;
+      /* width: 50vw; */
+      display: flow-root;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0px;
+      height: 100px;
       background-color: red;
+    }
+
+    #box2 {
+      position: relative;
+      height: 300px;
+      background-color: pink;
     }
   </style>
 </head>
 <body>
   <div id="box"></div>
-  <script>
-    const p1 = new Promise((resolve, reject) => {
-      resolve(a)
-    })
-    async function foo() {
-      try {
-        await p1
-      } catch (err) {
-        console.log(err);
-      }
-      console.log(1);
-    }
-    foo()
-  </script>
+  <div id="box2"></div>
 </body>
 </html>
