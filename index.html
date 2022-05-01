@@ -1,12 +1,47 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>css阻塞</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      h1 {
+        color: red !important
+      }
+    </style>
+    <script>
+      function h () {
+        console.log(document.querySelectorAll('h1').length)
+      }
+      setTimeout(h, 0)
+    </script>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>这是红色的</h1>
+  </body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script src="./code/实现let思路.js"></script>
-</body>
+  <head>
+    <title>css阻塞</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      console.log("before css");
+      var startDate = new Date();
+    </script>
+    <link
+      href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>这是红色的</h1>
+    <script>
+      var endDate = new Date();
+      console.log("after css");
+      console.log("经过了" + (endDate - startDate) + "ms");
+    </script>
+  </body>
 </html>
