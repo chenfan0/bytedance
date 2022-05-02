@@ -411,6 +411,8 @@ with(obj) {
 - 怎么理解单一职责性，为什么要遵循这一原则？
 - diff 算法？
 - Vue Scoped CSS 是做什么的，怎么实现的，如果让你自己实现有什么思路？
+  - scoped是让css只应用到当前组件的元素上。
+  - 当设置了scoped时，会添加上data-vxxx的属性，然后通过属性选择器进行选择该元素。
 - 你对于封装、模块化的理解，项目中自己封装过组件吗？
 - vue 中的 scoped style 是如何实现作用域样式以及为什么 vue 不使用 css module 来实现作用域？
 - watch 和 computed 的区别？
