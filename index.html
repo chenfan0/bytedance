@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    #box {
-      /* width: 50vw; */
-      display: flow-root;
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: 0px;
-      height: 100px;
-      background-color: red;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        height: 400px;
+        background-color: red;
+      }
 
-    #box2 {
-      position: relative;
-      height: 300px;
-      background-color: pink;
-    }
-  </style>
-</head>
-<body>
-  <div id="box"></div>
-  <div id="box2"></div>
-</body>
+      #box2 {
+        height: 300px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="box2"></div>
+    </div>
+    <script>
+      const box = document.querySelector('#box')
+      const box1 = document.querySelector('#box1')
+      box.addEventListener('click', function(e) {
+        console.log(e.target, 'target');
+        console.log(e.currentTarget, 'currentTarget');
+      })
+    </script>
+  </body>
 </html>

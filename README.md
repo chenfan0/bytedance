@@ -317,6 +317,7 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
 - js 垃圾回收机制？
   - https://juejin.cn/post/7042968897800601608
 - 函数创建和执行的过程？
+  - 
 - css 动画与 js 动画区别？
   - css动画相对而言比较简单但是可操作性性没有js动画那么高，同时浏览器可以会一些css动画进行优化,性能相对优于js动画
   - js动画相对css动画会更加复杂，可操作性比css高。
@@ -333,21 +334,61 @@ align-self  /* 可以单独决定flex items在cross axis的对齐方式，会覆
   - 配合Proxy使用，更加方便
   - 可以代替 in， delete这些看起来有点奇怪的操作符。
 - 静态作用域和动态作用域？
+  - 静态作用域：又称词法作用域，函数的作用域在函数定义时就决定了。
+  - 动态作用域：函数的作用域在函数调用时才决定。
 - 如何排查内存泄漏？ 火焰图接触过吗？
+  - Performance
 - 浏览器的事件模型？在当前的事件模型中，哪些事件可以冒泡，哪些不会冒泡，为什么？不会冒泡的怎么实现事件委托？
-- 从继承,多态,封装三方面讲一下 js 是怎么实现的？
+  - DOM0事件模型
+  - DOM2事件模型
+  - 不会冒泡的事件：scroll，blur，focus，mouseleave，mouseenter，resize
+  - 不会冒泡的可以通过事件捕获进行事件委托
 - 为什么 JS 执行的时候要阻塞 HTML 解析？
+  - 因为js执行可能会对DOM进行操作，如果不阻塞HTML的解析，那么解析出来的HTML可能是错误了，需要重新解析。
 - setInterval 的细节？
+   - setInterval在每次把任务push到任务队列前，都要判断当前队列是否有上一次的任务，如果有则会跳过当前要添加的任务。
 - v8 引擎的 sort()实现？
+  - 当数据量小时会采用插入排序
+  - 当数据量大时会采用快速排序。
 - removeEventListener(eventName,callback)拿不到函数名(callback)怎么办？
 - JS 里面印象最深刻的技术，说三个？
+  - proxy
+  - 模板字符串
+  - 解构赋值
 - 创建一个原型链只有 name 属性的对象（除了 name 属性其他属性都没有）？
   - Object.create(null, {name: {value: ''}})
-- ES6 module 和 commonjs 的区别？
+- ES module 和 commonjs 的区别？
+  - commonJS是同步的可以动态加载语句，代码发生在运行时，导出的值是拷贝值。
+  - ESM是静态的，不可以动态加载（如果想要的话要通过import函数），只能声明在文件的最顶部。esm导出的值是可读当时不可修改的，同时导入的值不实时与导出时保持一致。
 - e.target 和 e.currentTarget 的区别？
+  - e.target是当前触发事件的元素
+  - e.currentTarget是当前绑定事件的那个元素
 - addEventListener 的第三个参数？
+```js
+  // 第三个参数
+  {
+    capture: 'boolean', // 是否开启捕获模式，默认为false
+    once: 'boolean', // 是否在被调用后自动移除
+    passive: 'boolean', // 设置为true表示永远不会调用preventDefault()，如果调用了，则会忽略并且抛出一个警告。
+    signal: 'AbortSignal', // 该AbortSignal的abort方法被调用时，监听器会被移除。
+  }
+```
 - with 的了解？
+```js
+const obj = {
+  name: 'aaa',
+  age: 18
+}
+
+with(obj) {
+  // 这里的name和age就会默认去obj找
+  console.log(name)
+  console.log(age)
+}
+
+```
 - 页面有一个 iframe，将主页面的一个数组传到 iframe 中再用 instanceof 判断数组是否可行？
+  - 不可行
 - Fetch API 与传统 XHR 的区别？
 - JS 如何性能监测，如何监测用户页面是否卡顿？
 - sort()是内部使用了什么算法 时间复杂度是多少 indexOf()的时间复杂度是多少？
