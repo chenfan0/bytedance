@@ -547,9 +547,19 @@ with (obj) {
   - Domain：设置可以携带cookie的域名
   - path：设置路径
 - 跨域是什么？有哪些实现方式？CORS 响应头？
+  - 当协议，域名，端口号，三者有一个不同时，就算跨域了。
+  - 跨域可以通过jsonp，cors，开启proxy代理来解决。
 - 怎么让跨域请求携带 Cookie，协议名不一样算跨域吗？
+  - 服务器设置access-control-allow-credentials：true
+  - 客户端发送时，打开withCredentials属性
 - 讲一下 JWT 机制？
-- 常见的协议有哪些？
+  - jwt由三部分组成：
+    - header（头部）：是一个JSON对象，描述jwt的元数据。（typ，alg）
+    - payload（载荷）：也是json对象，用来存放实际需要传递的数据。
+    - signature（签名）：对前面两部分的前面，防止数据篡改。
+  - 算出签名后，把header，payload，signature三个部分拼成一个字符串，每个部分用.分割就可以返回给用户了。
+  - JWT默认是不加密的
+  - JWT最大的缺点是无法在使用过程废弃某个token，或者修改某个token。除非服务器部署额外的逻辑
 - 最上面两层里面的协议？
   - 传输层：TCP，UDP
   - 应用层：DNS，HTTP，FTP
