@@ -554,6 +554,7 @@ with (obj) {
   - 传输层：TCP，UDP
   - 应用层：DNS，HTTP，FTP
 - 非简单请求为什么要发 options，有什么用吗？
+  - 获取服务器是否允许该实际请求
 - 服务端如何检查用户是否登录？
 - 如何预防 xss/csrf 攻击？
 - samesite 属性说一下？ samesite 属性的 lax 值？ domain 属性说一下 ？ 如何配置跨域允许携带 cookie？子域也能携带 cookie 吗？
@@ -565,7 +566,6 @@ with (obj) {
 - https 的加密方式有了解吗?CA 证书客户端放在哪里?
 - 知道数字签名和数字信封吗？
 - 怎么确定哪个 CDN 节点离用户最近呢？
-- https 全过程 握手的每一步？
 - ssl tls 有什么区别讲一下？
 - 对称加密非对称加密？
 - DNS 递归查找的弊端？
